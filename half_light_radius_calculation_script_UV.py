@@ -1,4 +1,3 @@
-###################UV###########################################
 from astropy.io import fits
 import matplotlib.pyplot as plt
 from astropy.visualization import astropy_mpl_style
@@ -6,6 +5,7 @@ from astropy.utils.data import get_pkg_data_filename
 import numpy
 from scipy import interpolate
 import time
+import math
 
 start = time.time()
 file_names_wav=["C:/Users/pauru/Documents/SKIRT/flares_00/gal_000/flares_cube_UV_sed.dat",
@@ -105,7 +105,9 @@ for x in file_names_fits:
             while m<min(k+radius+1,size_x):
                 n=max(0,l-radius)
                 while n<min(l+radius+1,size_y):
-                    sumhf+=image[m][n]
+                    current_point=(m,n)
+                    if(abs(math.dist(current_point,center))<=radius) :
+                        sumhf+=image[m][n]
                     #print(r,radius)
                     n+=1
                 m+=1

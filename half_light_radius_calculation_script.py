@@ -103,7 +103,10 @@ for x in file_names_fits:
             while m<min(k+radius+1,size_x):
                 n=max(0,l-radius)
                 while n<min(l+radius+1,size_y):
-                    sumhf+=image[m][n]
+                    current_point=(m,n)
+                    if(abs(math.dist(current_point,center))<=radius) :
+                        sumhf+=image[m][n]
+                    #sumhf+=image[m][n]
                     #print(r,radius)
                     n+=1
                 m+=1
