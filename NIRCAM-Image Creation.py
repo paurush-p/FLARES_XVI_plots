@@ -18,7 +18,7 @@ def imagecreation(filename,wavelengths,redshift,filterR,filterG,filterB,psfR,psf
     wavs=wavelengths
 
 
-    psfreshapesize=60 #psfs are, takes these amounts of pixles around the point source
+    psfreshapesize=60 #psfs are huge, takes these amounts of pixles around the point source
     psfrs=psfreshapesize/2
 
     filtername=["F070W","F090W","F115W","F140M","F150W","F162M","F164N","F150W2","F182M","F187N","F200W","F210M","F212N"]
